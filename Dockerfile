@@ -1,7 +1,6 @@
 # Use PHP 8.2 with Apache
 FROM php:8.2-apache
 
-# Set working directory
 WORKDIR /var/www/html
 
 # Install dependencies
@@ -24,8 +23,11 @@ RUN composer install --no-dev --optimize-autoloader
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
+# Set Apache document root to Laravel public folder
+RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available/000-default.conf
+
 # Expose port
-EXPOSE 8080
+EXPOSE 80
 
 # Start Apache
 CMD ["apache2-foreground"]
