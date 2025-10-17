@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website - About</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>About Us</h1>
+        <nav>
+             <a href="{{'/'}}">Home</a> |
+            <a href="{{'/about'}}">About</a> |
+            <a href="{{'/contact'}}">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <h2>About Page</h2>
+        <p>Write something about your website or yourself here.</p>
+    </main>
+    <footer>
+        <p>&copy; 2025 My Website</p>
+    </footer>
+</body>
+</html>
